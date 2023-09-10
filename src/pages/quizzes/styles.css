@@ -1,0 +1,45 @@
+.section {
+  display: flex;
+}
+
+.container {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-item {
+  max-width: 350px;
+  border-radius: 15px;
+  border-color: rgb(204, 204, 240) solid 2px;
+}
+
+.card-item:hover {
+  border-color: rgb(80, 80, 251);
+  cursor: pointer;
+}
+
+.image {
+  height: 200px;
+  object-fit: contain;
+}
+
+.action-block {
+  display: flex;
+  justify-content: space-around;
+}
+
+.start-btn,
+.show-btn {
+  height: 30px;
+  width: 100px;
+  background-color: #d1dcf6;
+  border: 1px solid #9eb1db;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.start-btn:hover,
+.show-btn:hover {
+  background-color: #a5c0fa;
+}
