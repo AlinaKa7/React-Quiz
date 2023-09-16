@@ -41,6 +41,5 @@ export default function Main() {
 				<CardUnit key={quizzes.id} quizzes={quizzes} />
 			))}
     </CardWrapper>
-
 	);
 }
