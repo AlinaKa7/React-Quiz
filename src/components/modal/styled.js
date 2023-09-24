@@ -1,10 +1,10 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const ModalWrap = styled('div')(() => ({
   position: 'fixed',
   top: 0,
   left: 0,
-	height: '100vh',
+  height: '100vh',
   width: '100vw',
   display: 'flex',
   alignItems: 'center',
@@ -18,7 +18,7 @@ export const ModalContent = styled('div')(() => ({
   borderRadius: '8px',
   width: '80%',
   height: '500px',
-  maxWidth: '400px', 
+  maxWidth: '400px',
   textAlign: 'center',
   boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
 }));

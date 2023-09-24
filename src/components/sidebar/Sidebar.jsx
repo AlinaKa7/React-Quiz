@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { PropTypes } from 'prop-types';
+
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
@@ -7,14 +9,14 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import CloseIcon from '@mui/icons-material/Close';
 
-export default function SwipeableTemporaryDrawer({state, setState, toggleDrawer}) {
-
+export default function SwipeableTemporaryDrawer({ state, toggleDrawer }) {
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'flex-start',
+      sx={{
+        width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
       }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -22,7 +24,9 @@ export default function SwipeableTemporaryDrawer({state, setState, toggleDrawer}
     >
       <CloseIcon onClick={toggleDrawer(anchor, false)} style={{ marginLeft: 'auto', padding: '10px' }}></CloseIcon>
       <List>
-        {['HTML Quizzes', 'CSS Quizzes', 'JS Quizzes', 'React Quizzes', 'Python Quizzes', 'Coding Quizzes'].map((text, index) => (
+        {[
+          'HTML Quizzes', 'CSS Quizzes', 'JS Quizzes', 'React Quizzes', 'Python Quizzes', 'Coding Quizzes',
+        ].map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemText primary={text} />
@@ -50,3 +54,8 @@ export default function SwipeableTemporaryDrawer({state, setState, toggleDrawer}
     </div>
   );
 }
+
+SwipeableTemporaryDrawer.propTypes = {
+  state: PropTypes.object.isRequired,
+  toggleDrawer: PropTypes.func.isRequired,
+};

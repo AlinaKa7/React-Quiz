@@ -1,0 +1,22 @@
+{
+    "name": "JS",
+    "questions": [
+        {
+            "question": "some question",
+            "answer": "correct"
+        },
+        {
+            "question": "some question",
+            "answer": "correct"
+        },
+        {
+            "question": "some question",
+            "answer": "correct"
+        }
+    ],
+    "answers": [
+        ["first case answer", "second case answer", "third case answer", "correct"],
+        ["first case answer", "second case answer", "third case answer", "correct"],
+        ["first case answer", "second case answer", "third case answer", "correct"]
+    ]
+}

@@ -1,15 +1,22 @@
 import React from 'react';
-import Footer from './components/footer/Footer.jsx';
-import Header from './components/header/Header.jsx';
-import { Main }  from './components/main';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Template from './components/Templates/Template';
+import NotFound from './components/NotFound/NotFound';
+import QuizRoutes from './components/Routes/QuizRoutes';
+import HtmlQuizzes from './components/quizzes/HtmlQuizzes';
 
 function App() {
-  return ( 
-    <div className='App'>
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+  return (
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<h1>Welcome!</h1>} />
+      <Route path='/*' element={<NotFound />} />
+      <Route element={<Template />}>
+        <Route path='/quizzes' element={<QuizRoutes />} />
+        <Route path='/html' element={<HtmlQuizzes />} />
+      </Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 

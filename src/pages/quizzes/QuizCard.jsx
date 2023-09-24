@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { PropTypes } from 'prop-types';
 
-import ModalWindow from "../../components/modal/ModalWindow";
-import { Button, Card, CardActions, Container } from "./styled";
-import { CardContent, CardMedia, Typography } from "@mui/material";
+import { CardContent, CardMedia, Typography } from '@mui/material';
+import ModalWindow from '../../components/modal/ModalWindow';
+import {
+  Button, Card, CardActions, Container,
+} from './styled';
 
 export default function CardUnit({ quizzes }) {
   const [isShowModal, setShowModal] = useState(false);
@@ -18,12 +21,13 @@ export default function CardUnit({ quizzes }) {
             component="img"
             image={quizzes.img}
             title={quizzes.title}
-            style={{ 
-              width: "100%", 
-              maxHeight: "200px", 
-              objectFit: "contain", 
-              borderTopLeftRadius: "15px",
-              borderTopRightRadius: "15px" }}
+            style={{
+              width: '100%',
+              maxHeight: '200px',
+              objectFit: 'contain',
+              borderTopLeftRadius: '15px',
+              borderTopRightRadius: '15px',
+            }}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div" >
@@ -35,12 +39,20 @@ export default function CardUnit({ quizzes }) {
           </CardContent>
           <CardActions >
             <Button size="small">Start Quiz</Button>
-            <Button  size="small" onClick={handleShowModal}>Show More</Button>
+            <Button size="small" onClick={handleShowModal}>Show More</Button>
           </CardActions>
         </Card>
         {isShowModal && (
         <ModalWindow content={quizzes} handleCloseModal={handleShowModal} />
         )}
-      </Container> 
+      </Container>
   );
 }
+
+CardUnit.propTypes = {
+  quizzes: PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+};
