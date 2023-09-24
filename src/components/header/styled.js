@@ -5,9 +5,8 @@
 //     position: 'fixed',
 //     top: 0,
 //     width: '100%',
-//     zIndex: 1000, 
+//     zIndex: 1000,
 //   }));
-  
 // export const Search = styled('div')(({ theme }) => ({
 //   position: 'relative',
 //   borderRadius: theme.shape.borderRadius,
@@ -47,4 +46,4 @@
 //       },
 //     },
 //   },
-// }));
+// });

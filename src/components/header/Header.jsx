@@ -9,11 +9,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import SwipeableTemporaryDrawer from '../sidebar/Sidebar';
 
-const HeaderContainer = styled('div')(({ theme }) => ({
+const HeaderContainer = styled('div')(() => ({
   position: 'fixed',
   top: 0,
   width: '100%',
-  zIndex: 1000, 
+  zIndex: 1000,
 }));
 
 const Search = styled('div')(({ theme }) => ({
@@ -67,9 +67,9 @@ export default function Header() {
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
-      event &&
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
+      event
+      && event.type === 'keydown'
+      && (event.key === 'Tab' || event.key === 'Shift')
     ) {
       return;
     }
@@ -80,7 +80,7 @@ export default function Header() {
   return (
     <HeaderContainer>
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: '#5e7dda'}}>
+      <AppBar position="static" sx={{ backgroundColor: '#5e7dda' }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -92,11 +92,11 @@ export default function Header() {
           >
             <MenuIcon />
           </IconButton>
-          <img style={{ 
-            maxHeight: "80px", 
-            flexGrow: 1, 
-            objectFit: "contain",
-            }} src="/icon.svg" className="logo" alt="quiz-logo" />
+          <img style={{
+            maxHeight: '80px',
+            flexGrow: 1,
+            objectFit: 'contain',
+          }} src="/icon.svg" className="logo" alt="quiz-logo" />
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
